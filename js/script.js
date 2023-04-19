@@ -1,6 +1,13 @@
 // Globala konstanter och variabler
 const wordList = ["BLOMMA", "LASTBIL", "SOPTUNNA", "KÖKSBORD", "RADIOAPPARAT", "VINTER", "SOMMAR", "DATORMUS", "LEJON", "ELEFANTÖRA", "JULTOMTE", "SKOGSHYDDA", "BILNUMMER", "BLYERTSPENNA", "SUDDGUMMI", "KLÄDSKÅP", "VEDSPIS", "LJUSSTAKE", "SKRIVBORD", "ELDGAFFEL", "STEKPANNA", "KASTRULL", "KAFFEBRYGGARE", "TALLRIK", "SOFFBORD", "TRASMATTA", "FLYGPLAN", "FLYGPLATS", "TANGENTBORD"]; // Lista (array) med ord som ska väljas slumpmässigt
-
+var selectedWord;   // Slumpmässigt valt ord ut wordList
+var letterBoxes;    // Array med referenser till span-elementen för bokstäverna i ordet
+var hangmanImg;     // Referens till img-elementet med bilder
+var hangmanNr;      // Nummer för aktuell bild
+var msgElem;        // Referens till div-elementet
+var startGameBtn;   // Referens till startknappen
+var letterButtons;  // Arraw med referenser
+var startTime;      // Tid då spelet startas
 
 // --------------------------------------------------
 // Funktion som körs då hela webbsidan är inladdad, dvs då all HTML-kod är utförd
@@ -19,7 +26,7 @@ function init() {
 } // Slut init
 window.onload = init; // Se till att init aktiveras då sidan är inladdad
 // --------------------------------------------------
-// Initiering av ny spelrunda. Val av ord, visa bokstavsrutor, visa första bilden (tom bild), sätt bildnummer till 0 , inaktivera startknappt och aktivera bokstavsknappar
+// Initiering av ny spelrunda. Val av ord, visa bokstavsrutor, visa första bilden (tom bild), sätt bildnummer till 0 , inaktivera startknappt och aktivera bokstavsknappar.
 function startGame() {
     radnomWord ();
     showLetterBoxes();
