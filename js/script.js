@@ -1,12 +1,12 @@
 // Globala konstanter och variabler
 const wordList = ["BLOMMA", "LASTBIL", "SOPTUNNA", "KÖKSBORD", "RADIOAPPARAT", "VINTER", "SOMMAR", "DATORMUS", "LEJON", "ELEFANTÖRA", "JULTOMTE", "SKOGSHYDDA", "BILNUMMER", "BLYERTSPENNA", "SUDDGUMMI", "KLÄDSKÅP", "VEDSPIS", "LJUSSTAKE", "SKRIVBORD", "ELDGAFFEL", "STEKPANNA", "KASTRULL", "KAFFEBRYGGARE", "TALLRIK", "SOFFBORD", "TRASMATTA", "FLYGPLAN", "FLYGPLATS", "TANGENTBORD"]; // Lista (array) med ord som ska väljas slumpmässigt
-var selectedWord;   // Slumpmässigt valt ord ut wordList
+var selectedWord;   // Slumpmässigt valt ord ur wordList
 var letterBoxes;    // Array med referenser till span-elementen för bokstäverna i ordet
-var hangmanImg;     // Referens till img-elementet med bilder
-var hangmanNr;      // Nummer för aktuell bild
-var msgElem;        // Referens till div-elementet
+var hangmanImg;     // Referens till img-elementet med bilder för galgen och gubben
+var hangmanNr;      // Nummer för aktuell bild (0-6), för bildfil som visas (så man sedan kan veta vilket som blir nästan bild)
+var msgElem;        // Referens till html div-elementet för skrivna meddelanden till användaren
 var startGameBtn;   // Referens till startknappen
-var letterButtons;  // Arraw med referenser
+var letterButtons;  // Array med referenser till de span-taggar som utgör rutor för bokstäverna i ordet
 var startTime;      // Tid då spelet startas
 
 // --------------------------------------------------
@@ -24,7 +24,7 @@ function init() {
         for (let i = 0; i < letterButtons.length; i++)
             letterButtons[i].disabled = true; 
 } // Slut init
-window.onload = init; // Se till att init aktiveras då sidan är inladdad
+window.onload = init; // Se till att init aktiveras först när sidan är inladdad
 // --------------------------------------------------
 // Initiering av ny spelrunda. Val av ord, visa bokstavsrutor, visa första bilden (tom bild), sätt bildnummer till 0 , inaktivera startknappt och aktivera bokstavsknappar.
 function startGame() {
@@ -32,5 +32,20 @@ function startGame() {
     showLetterBoxes();
     hangmanImg.src = "img/h0.png";
     hangmanNr = 0;
-	
-}
+} // Slut startGame
+
+function guessLetter() {
+
+} // Slut guessLetter
+
+function randomWord () {
+
+} // Slut randomWord
+
+function showLetterBoxes() {
+
+} // Slut showLetterBoxes
+
+function endGame() {
+
+} // Slut endGame
