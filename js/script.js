@@ -43,6 +43,7 @@ function randomWord () {
 } // Slut randomWord
 
 function showLetterBoxes() {
+    let newCode = "";
 // (Variabeln letterBoxes tilldelas i funktionen showLetterBoxes, då span-elementen lagts in i HTML-koden). letterBoxes = 
 } // Slut showLetterBoxes
 
