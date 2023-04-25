@@ -26,7 +26,9 @@ window.onload = init; // Se till att init aktiveras först när sidan är inladd
 // --------------------------------------------------
 // Initiering av ny spelrunda. Val av ord, visa bokstavsrutor, visa första bilden (tom bild), sätt bildnummer till 0 , inaktivera startknappt och aktivera bokstavsknappar.
 function startGame() {
-    hangmanImg.src = "img/h0.png"; 
+    randomWord(); // Anrop av funktionen randomWord
+    showLetterBoxes(); // Anrop av funktionen showLetterBoxes
+    hangmanImg.src = "img/h0.png"; // Bild i img-element som refereras av variabeln hangmanImg
     hangmanNr = 0; // Variabeln hangmanNr tilldelas värdet 0 vid byte av bild
 } // Slut startGame
 
@@ -35,7 +37,8 @@ function guessLetter() {
 } // Slut guessLetter
 
 function randomWord () {
-    selectedWord
+    let ix = Math.floor(wordList.length * Math.random()); // 
+    selectedWord = wordList[ix];
 // (Variabeln selectedWord tilldelas ett nytt värde i funktionen randomWord) selectedWord =
 } // Slut randomWord
 
@@ -43,6 +46,6 @@ function showLetterBoxes() {
 // (Variabeln letterBoxes tilldelas i funktionen showLetterBoxes, då span-elementen lagts in i HTML-koden). letterBoxes = 
 } // Slut showLetterBoxes
 
-function endGame(manHanged) {
+function endGame(manHanged) { // manHanged används för att med true eller false avgöra vilket meddelande som ska skrivas ut vid anropning av funktionen endGame
 
 } // Slut endGame
